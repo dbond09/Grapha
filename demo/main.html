@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Grapha</title>
+  <style>
+    img.selected {
+      filter: drop-shadow(4px 4px 0 white);
+    }
+  </style>
+</head>
+
+<body class="menu-shown" onload="main()">
+  <iframe id="menu" src="./menu.html" style="width: 100vw; height: 100vh; border: none; position: absolute; z-index: 200"></iframe>
+  <p id="counter" style="position: absolute; font-size: 5px; z-index:100; bottom: 5px; left: 10px; display: none"></p>
+  <p id="incorrect" style="position: absolute; bottom: 5px; left: 10px; font-size: 15px; color: red; display: none;"></p>
+  <p id="correct" style="position: absolute; bottom: 25px; left: 10px; font-size: 15px; color: green; display: none;"></p>
+  <div id="main" class="blurred">
+    <svg></svg>
+  </div>
+  <!-- <div id="#buffer" style="display: none">
+    <svg></svg>
+  </div> -->
+  <div id="exit-button" ontouchend="if (window.confirm('Do you really want to quit?')) { showMenu() }">✕</div>
+  <div id="back-button" ontouchend="showMenu()">✕</div>
+  <div id="buttons-right">
+    <img id="random" src="./img/random.png" width="50" ontouchstart="this.className='selected'" ontouchend="this.className=null; graphaApp.random()"></img>
+    <!-- <img id="layout" src="./img/list.png" width="50" ontouchstart="this.className='selected'" ontouchend="this.className=null; graphaApp.switchLayout()"></img> -->
+    <img id="home" src="./img/home.png" width="50" ontouchstart="this.className='selected'"></img>
+  </div>
+  <div id="bottom-panel" classed="loading">
+    <div id="circles">
+    </div>
+  </div>
+  <div id="overlay" class="menu-overlay" style="visibility: hidden">
+    <div class="header-title">
+      Study session
+    </div>
+    <div class="buttons">
+      <div id="ol-exit-button" class="button" ontouchend="showMenu()">Exit</div>
+      <div id="ol-continue-button" class="button" ontouchend="this.parentElement.parentElement.style.visibility = 'visible'; graphaApp.startStudySession(true)">Continue</div>
+    </div>
+  </div>
+  <div class="loader"></div>
+  <!-- <img src="img/loading.svg" id="loading"></img> -->
+  <script src="js/d3.v4.min.js"></script>
+  <script src="js/babel-polyfill.js"></script>
+  <script src="js/layouts.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/list.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+
+</html>

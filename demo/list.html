@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>List</title>
+  <div id="buttons-right">
+    <img id="home" src="./img/home.png" width="50" ontouchstart="this.className='selected'" ontouchend="this.className=null; window.location='./menu.html'"></img>
+  </div>
+  <style>
+    .list-element {
+      padding: 15px;
+      margin-top: 15px;
+      margin-left: 15px;
+      margin-right: 15px;
+      border-radius: 10px;
+      border: 3px solid #433d66;
+      color: #433d66;
+    }
+
+    .list-element p {
+      font-size: 16px;
+    }
+
+    .list-element h1 {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script src="js/d3.v4.min.js"></script>
+  <script src="js/babel-polyfill.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/list.js"></script>
+</body>
+
+</html>

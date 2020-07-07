@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grapha</title>
+    <style>
+      body {
+        background-color: wheat;
+      }
+
+      #phone {
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%);
+        border: solid black;
+        border-radius: 50px;
+        border-width: 80px 10px;
+        box-shadow: 10px 10px 10px #00000077;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="phone" src="./main.html" width="320" height="568"></iframe>
+    <script type="text/javascript">
+      var graphaApp;
+
+      document.querySelector("iframe").onload = function() {
+        document.querySelector("iframe").contentDocument.onclick = function(e) {
+          e.target.dispatchEvent(new Event("touchend"));
+        }
+        document.querySelector("iframe").contentDocument.querySelector("#menu").contentDocument.onclick = function(e) {
+          e.target.dispatchEvent(new Event("touchend"));
+        }
+
+        graphaApp = document.querySelector("iframe").contentWindow.graphaApp;
+      }
+
+      function getApp() {
+        return document.querySelector("#phone").contentWindow.graphaApp;
+      }
+      getApp();
+    </script>
+  </body>
+</html>

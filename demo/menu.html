@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Menu</title>
+  <style>
+    body {
+      background-color: #1e97ca;
+    }
+
+    #logo-image {
+      position: relative;
+      width: 90%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    button {
+      display: block;
+      text-align: center;
+      width: 80vw;
+      margin-top: 20px;
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+      color: white;
+      font-size: 25px;
+      font-family: inherit;
+      border-radius: 3px;
+      background-color: #0a4255;
+      background: linear-gradient(90deg, rgb(241, 231, 103) 0%, rgb(254, 182, 69) 100%);
+      box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3), -3px -3px 10px 0px rgba(255,255,255,0.2);
+    }
+
+    button.half-button {
+      width: 50%;
+      display: inline-block;
+    }
+
+    button.half-button:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    button.half-button:nth-child(2) {
+      float: right;
+      border-radius: 0 3px 3px 0;
+    }
+
+    button:active {
+      background-color: #a18f08 !important;
+      box-shadow: none;
+      transform: scale(0.98);
+    }
+
+    #levels-button {
+      background: linear-gradient(16deg, #284350, rgb(52, 91, 109))!important;
+      width: calc(70vw - 20px);
+    }
+
+    #settings-button {
+      width: 20vw;
+      background: linear-gradient(16deg, #284350, rgb(52, 91, 109))!important;
+    }
+
+    #settings-button > img {
+      width: 20px;
+    }
+
+    a, a:hover, a:visited, a:link, a:active {
+      text-decoration: none;
+    }
+
+    .inner > .level-item {
+      width: 80vw;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body onload="//parent.graphaApp.tutorial()">
+  <div style="position: absolute; width: 100vw; margin: 0">
+    <div class="outer">
+      <div class="inner">
+        <img id="logo-image" src="./img/text_logo.png" />
+        <!-- <h1 id="logo" style="font-family: cursive; font-size: 30vw; margin-bottom: 50px">Grapha</h1> -->
+        <div style="margin-left: auto; margin-right: auto">
+          <div style="display: flex; width: 90vw; justify-content: space-between">
+            <button id="settings-button" ontouchend="parent.showSettings()"><img src="img/settings.svg"></img></button>
+            <button id="levels-button" ontouchend="parent.renderHSKLevels()">Levels</button>
+          </div>
+          <button id="study-button" style="color: #0a4255; background-color: #f5de36; width: 90vw;" ontouchend="parent.hideMenu(); parent.graphaApp.mode='study'; parent.graphaApp.startStudySession(true)">Study</button>
+        </div>
+        <!-- <button style="border: 1.5px solid #0a4255" onmouseup="sessionStorage.setItem('explore', true); window.location = './main.html'">Explore</button>
+        <button style="border: 1.5px solid #0a4255" onmouseup="window.location = './list.html'">Words</button>
+        <button style="border: 1.5px solid #0a4255" ontouchend="">Settings</button> -->
+      </div>
+    </div>
+  </div>
+  <!-- <script type="text/javascript" src="cordova.js"></script> -->
+  <!-- <script type="text/javascript" src="js/index.js"></script> -->
+</body>
+
+</html>

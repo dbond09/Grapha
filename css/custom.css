@@ -170,3 +170,8 @@
 .row > img {
   border: 10px solid transparent;
 }
+
+.footer {
+  text-align: center;
+  color: gray;
+}
